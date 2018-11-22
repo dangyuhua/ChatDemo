@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - Bugly (2.5.0)
   - DACircularProgress (2.3.1)
   - EaseUI (3.4.2):
@@ -20,6 +35,7 @@ PODS:
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.2.1)
   - Bugly
   - EaseUI (from `https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git`, tag `3.4.2`)
   - Hyphenate
@@ -27,6 +43,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
     - Bugly
     - DACircularProgress
     - Hyphenate
@@ -47,6 +64,7 @@ CHECKOUT OPTIONS:
     :tag: 3.4.2
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   EaseUI: f2c232107d164eb43d33f4fd9b6915d1dfb28c7e
@@ -57,6 +75,6 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 15d060dacec4454331463dd6c0b47d2fb077bd02
+PODFILE CHECKSUM: e46762ba480c302ba035a1a47352d7e8d0a05287
 
 COCOAPODS: 1.5.3

@@ -1,23 +1,22 @@
 //
-//  ViewController.m
+//  GroupMemberManageVC.m
 //  ChatDemo
 //
-//  Created by 党玉华 on 2018/11/20.
+//  Created by 党玉华 on 2018/11/22.
 //  Copyright © 2018年 dyh绝地求生专业送快递. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GroupMemberManageVC.h"
 
-@interface ViewController ()
+@interface GroupMemberManageVC ()
 
 @end
 
-@implementation ViewController
+@implementation GroupMemberManageVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
 }
-
 
 @end

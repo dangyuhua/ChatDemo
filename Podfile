@@ -21,5 +21,6 @@ pod 'Hyphenate'
 pod 'EaseUI', :git => 'https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git', :tag => '3.4.2'
 pod 'YYKit'
 pod 'Bugly'
+pod 'AFNetworking', '~> 3.2.1'
 
 end

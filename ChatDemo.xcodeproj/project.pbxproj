@@ -11,13 +11,31 @@
 		67A3404D17ACE896C25A27CD /* libPods-ChatDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459095B8C908038D610B288B /* libPods-ChatDemoTests.a */; };
 		DF2A65850DD9AC02D865F70B /* libPods-ChatDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C373300F004497A6E6EB5C47 /* libPods-ChatDemoUITests.a */; };
 		FC0401CC21A3F07700F75F1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0401CB21A3F07700F75F1C /* AppDelegate.m */; };
-		FC0401CF21A3F07700F75F1C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0401CE21A3F07700F75F1C /* ViewController.m */; };
 		FC0401D221A3F07700F75F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC0401D021A3F07700F75F1C /* Main.storyboard */; };
 		FC0401D421A3F07800F75F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC0401D321A3F07800F75F1C /* Assets.xcassets */; };
 		FC0401D721A3F07800F75F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC0401D521A3F07800F75F1C /* LaunchScreen.storyboard */; };
 		FC0401DA21A3F07800F75F1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0401D921A3F07800F75F1C /* main.m */; };
 		FC0401E421A3F07800F75F1C /* ChatDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0401E321A3F07800F75F1C /* ChatDemoTests.m */; };
 		FC0401EF21A3F07800F75F1C /* ChatDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0401EE21A3F07800F75F1C /* ChatDemoUITests.m */; };
+		FC04021021A4018600F75F1C /* QuickCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04020721A4018500F75F1C /* QuickCreate.m */; };
+		FC04021121A4018600F75F1C /* FPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04020A21A4018500F75F1C /* FPSLabel.m */; };
+		FC04021221A4018600F75F1C /* EMClientManage.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04020E21A4018600F75F1C /* EMClientManage.m */; };
+		FC04021321A4018600F75F1C /* MBPManage.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04020F21A4018600F75F1C /* MBPManage.m */; };
+		FC04021721A4021500F75F1C /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04021621A4021500F75F1C /* UITabBar+Badge.m */; };
+		FC04021C21A4030800F75F1C /* TabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04021821A4030700F75F1C /* TabBarVC.m */; };
+		FC04021D21A4030800F75F1C /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04021A21A4030700F75F1C /* BaseVC.m */; };
+		FC04022021A403BA00F75F1C /* LocalNotificationManage.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04021E21A403BA00F75F1C /* LocalNotificationManage.m */; };
+		FC04022321A4040100F75F1C /* ChatListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04022221A4040100F75F1C /* ChatListVC.m */; };
+		FC04022621A4041E00F75F1C /* ChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04022521A4041E00F75F1C /* ChatVC.m */; };
+		FC04022921A404FA00F75F1C /* ContactListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04022821A404FA00F75F1C /* ContactListVC.m */; };
+		FC04022C21A4052000F75F1C /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04022B21A4052000F75F1C /* SettingVC.m */; };
+		FC04022F21A4053800F75F1C /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04022E21A4053800F75F1C /* LoginVC.m */; };
+		FC04023221A4590900F75F1C /* AddFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04023121A4590900F75F1C /* AddFriendVC.m */; };
+		FCDE8AB721A69435006D556B /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDE8AB621A69435006D556B /* Network.m */; };
+		FCDE8ABA21A6A610006D556B /* AddGroupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDE8AB921A6A610006D556B /* AddGroupVC.m */; };
+		FCDE8ABD21A6B407006D556B /* GroupManageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDE8ABC21A6B407006D556B /* GroupManageVC.m */; };
+		FCDE8AC021A6EAB5006D556B /* GroupMemberManageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDE8ABF21A6EAB5006D556B /* GroupMemberManageVC.m */; };
+		FCDE8AC321A6F1DF006D556B /* PersonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDE8AC121A6F1DF006D556B /* PersonInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +68,6 @@
 		FC0401C721A3F07700F75F1C /* ChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC0401CA21A3F07700F75F1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC0401CB21A3F07700F75F1C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FC0401CD21A3F07700F75F1C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FC0401CE21A3F07700F75F1C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FC0401D121A3F07700F75F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC0401D321A3F07800F75F1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC0401D621A3F07800F75F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +79,46 @@
 		FC0401EA21A3F07800F75F1C /* ChatDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC0401EE21A3F07800F75F1C /* ChatDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatDemoUITests.m; sourceTree = "<group>"; };
 		FC0401F021A3F07800F75F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC04020621A4018500F75F1C /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		FC04020721A4018500F75F1C /* QuickCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickCreate.m; sourceTree = "<group>"; };
+		FC04020821A4018500F75F1C /* MBPManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPManage.h; sourceTree = "<group>"; };
+		FC04020921A4018500F75F1C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FC04020A21A4018500F75F1C /* FPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPSLabel.m; sourceTree = "<group>"; };
+		FC04020B21A4018600F75F1C /* QuickCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickCreate.h; sourceTree = "<group>"; };
+		FC04020C21A4018600F75F1C /* EMClientManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMClientManage.h; sourceTree = "<group>"; };
+		FC04020D21A4018600F75F1C /* FPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPSLabel.h; sourceTree = "<group>"; };
+		FC04020E21A4018600F75F1C /* EMClientManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMClientManage.m; sourceTree = "<group>"; };
+		FC04020F21A4018600F75F1C /* MBPManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPManage.m; sourceTree = "<group>"; };
+		FC04021521A4021500F75F1C /* UITabBar+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Badge.h"; sourceTree = "<group>"; };
+		FC04021621A4021500F75F1C /* UITabBar+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Badge.m"; sourceTree = "<group>"; };
+		FC04021821A4030700F75F1C /* TabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarVC.m; sourceTree = "<group>"; };
+		FC04021921A4030700F75F1C /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		FC04021A21A4030700F75F1C /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		FC04021B21A4030800F75F1C /* TabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarVC.h; sourceTree = "<group>"; };
+		FC04021E21A403BA00F75F1C /* LocalNotificationManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationManage.m; sourceTree = "<group>"; };
+		FC04021F21A403BA00F75F1C /* LocalNotificationManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNotificationManage.h; sourceTree = "<group>"; };
+		FC04022121A4040100F75F1C /* ChatListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatListVC.h; sourceTree = "<group>"; };
+		FC04022221A4040100F75F1C /* ChatListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatListVC.m; sourceTree = "<group>"; };
+		FC04022421A4041E00F75F1C /* ChatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatVC.h; sourceTree = "<group>"; };
+		FC04022521A4041E00F75F1C /* ChatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatVC.m; sourceTree = "<group>"; };
+		FC04022721A404FA00F75F1C /* ContactListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactListVC.h; sourceTree = "<group>"; };
+		FC04022821A404FA00F75F1C /* ContactListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactListVC.m; sourceTree = "<group>"; };
+		FC04022A21A4052000F75F1C /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		FC04022B21A4052000F75F1C /* SettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		FC04022D21A4053800F75F1C /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		FC04022E21A4053800F75F1C /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		FC04023021A4590900F75F1C /* AddFriendVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddFriendVC.h; sourceTree = "<group>"; };
+		FC04023121A4590900F75F1C /* AddFriendVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddFriendVC.m; sourceTree = "<group>"; };
+		FCDE8AB521A69435006D556B /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		FCDE8AB621A69435006D556B /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
+		FCDE8AB821A6A610006D556B /* AddGroupVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGroupVC.h; sourceTree = "<group>"; };
+		FCDE8AB921A6A610006D556B /* AddGroupVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGroupVC.m; sourceTree = "<group>"; };
+		FCDE8ABB21A6B407006D556B /* GroupManageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupManageVC.h; sourceTree = "<group>"; };
+		FCDE8ABC21A6B407006D556B /* GroupManageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupManageVC.m; sourceTree = "<group>"; };
+		FCDE8ABE21A6EAB5006D556B /* GroupMemberManageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupMemberManageVC.h; sourceTree = "<group>"; };
+		FCDE8ABF21A6EAB5006D556B /* GroupMemberManageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupMemberManageVC.m; sourceTree = "<group>"; };
+		FCDE8AC121A6F1DF006D556B /* PersonInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfo.m; sourceTree = "<group>"; };
+		FCDE8AC221A6F1DF006D556B /* PersonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,10 +197,12 @@
 		FC0401C921A3F07700F75F1C /* ChatDemo */ = {
 			isa = PBXGroup;
 			children = (
-				FC0401CA21A3F07700F75F1C /* AppDelegate.h */,
-				FC0401CB21A3F07700F75F1C /* AppDelegate.m */,
-				FC0401CD21A3F07700F75F1C /* ViewController.h */,
-				FC0401CE21A3F07700F75F1C /* ViewController.m */,
+				FC0401FD21A400B800F75F1C /* Tools */,
+				FC0401FC21A4008000F75F1C /* Base */,
+				FC0401FF21A400D700F75F1C /* TabOne */,
+				FC04020021A4012000F75F1C /* TabTwo */,
+				FC04020121A4012800F75F1C /* TabThree */,
+				FC0401FE21A400D000F75F1C /* Login */,
 				FC0401D021A3F07700F75F1C /* Main.storyboard */,
 				FC0401D321A3F07800F75F1C /* Assets.xcassets */,
 				FC0401D521A3F07800F75F1C /* LaunchScreen.storyboard */,
@@ -170,6 +228,130 @@
 				FC0401F021A3F07800F75F1C /* Info.plist */,
 			);
 			path = ChatDemoUITests;
+			sourceTree = "<group>";
+		};
+		FC0401FC21A4008000F75F1C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FC0401CA21A3F07700F75F1C /* AppDelegate.h */,
+				FC0401CB21A3F07700F75F1C /* AppDelegate.m */,
+				FC04021B21A4030800F75F1C /* TabBarVC.h */,
+				FC04021821A4030700F75F1C /* TabBarVC.m */,
+				FC04021921A4030700F75F1C /* BaseVC.h */,
+				FC04021A21A4030700F75F1C /* BaseVC.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FC0401FD21A400B800F75F1C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				FC04020921A4018500F75F1C /* PrefixHeader.pch */,
+				FC04020621A4018500F75F1C /* Macros.h */,
+				FC04020B21A4018600F75F1C /* QuickCreate.h */,
+				FC04020721A4018500F75F1C /* QuickCreate.m */,
+				FCDE8AB521A69435006D556B /* Network.h */,
+				FCDE8AB621A69435006D556B /* Network.m */,
+				FC04020C21A4018600F75F1C /* EMClientManage.h */,
+				FC04020E21A4018600F75F1C /* EMClientManage.m */,
+				FC04020D21A4018600F75F1C /* FPSLabel.h */,
+				FC04020A21A4018500F75F1C /* FPSLabel.m */,
+				FC04020821A4018500F75F1C /* MBPManage.h */,
+				FC04020F21A4018600F75F1C /* MBPManage.m */,
+				FC04021F21A403BA00F75F1C /* LocalNotificationManage.h */,
+				FC04021E21A403BA00F75F1C /* LocalNotificationManage.m */,
+				FC04021421A4021500F75F1C /* Extension */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		FC0401FE21A400D000F75F1C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FC04020221A4013400F75F1C /* VC */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FC0401FF21A400D700F75F1C /* TabOne */ = {
+			isa = PBXGroup;
+			children = (
+				FC04020321A4013900F75F1C /* VC */,
+			);
+			path = TabOne;
+			sourceTree = "<group>";
+		};
+		FC04020021A4012000F75F1C /* TabTwo */ = {
+			isa = PBXGroup;
+			children = (
+				FC04020421A4013B00F75F1C /* VC */,
+			);
+			path = TabTwo;
+			sourceTree = "<group>";
+		};
+		FC04020121A4012800F75F1C /* TabThree */ = {
+			isa = PBXGroup;
+			children = (
+				FC04020521A4013E00F75F1C /* VC */,
+			);
+			path = TabThree;
+			sourceTree = "<group>";
+		};
+		FC04020221A4013400F75F1C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				FC04022D21A4053800F75F1C /* LoginVC.h */,
+				FC04022E21A4053800F75F1C /* LoginVC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		FC04020321A4013900F75F1C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				FC04022121A4040100F75F1C /* ChatListVC.h */,
+				FC04022221A4040100F75F1C /* ChatListVC.m */,
+				FC04022421A4041E00F75F1C /* ChatVC.h */,
+				FC04022521A4041E00F75F1C /* ChatVC.m */,
+				FCDE8ABB21A6B407006D556B /* GroupManageVC.h */,
+				FCDE8ABC21A6B407006D556B /* GroupManageVC.m */,
+				FCDE8ABE21A6EAB5006D556B /* GroupMemberManageVC.h */,
+				FCDE8ABF21A6EAB5006D556B /* GroupMemberManageVC.m */,
+				FCDE8AC221A6F1DF006D556B /* PersonInfo.h */,
+				FCDE8AC121A6F1DF006D556B /* PersonInfo.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		FC04020421A4013B00F75F1C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				FC04022721A404FA00F75F1C /* ContactListVC.h */,
+				FC04022821A404FA00F75F1C /* ContactListVC.m */,
+				FC04023021A4590900F75F1C /* AddFriendVC.h */,
+				FC04023121A4590900F75F1C /* AddFriendVC.m */,
+				FCDE8AB821A6A610006D556B /* AddGroupVC.h */,
+				FCDE8AB921A6A610006D556B /* AddGroupVC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		FC04020521A4013E00F75F1C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				FC04022A21A4052000F75F1C /* SettingVC.h */,
+				FC04022B21A4052000F75F1C /* SettingVC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		FC04021421A4021500F75F1C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FC04021521A4021500F75F1C /* UITabBar+Badge.h */,
+				FC04021621A4021500F75F1C /* UITabBar+Badge.m */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,9 +606,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC0401CF21A3F07700F75F1C /* ViewController.m in Sources */,
+				FCDE8AC321A6F1DF006D556B /* PersonInfo.m in Sources */,
+				FC04022621A4041E00F75F1C /* ChatVC.m in Sources */,
+				FC04021221A4018600F75F1C /* EMClientManage.m in Sources */,
+				FC04023221A4590900F75F1C /* AddFriendVC.m in Sources */,
+				FCDE8AC021A6EAB5006D556B /* GroupMemberManageVC.m in Sources */,
+				FC04022F21A4053800F75F1C /* LoginVC.m in Sources */,
+				FC04021021A4018600F75F1C /* QuickCreate.m in Sources */,
+				FC04022321A4040100F75F1C /* ChatListVC.m in Sources */,
+				FC04021C21A4030800F75F1C /* TabBarVC.m in Sources */,
+				FC04022921A404FA00F75F1C /* ContactListVC.m in Sources */,
+				FC04021D21A4030800F75F1C /* BaseVC.m in Sources */,
+				FC04021321A4018600F75F1C /* MBPManage.m in Sources */,
+				FC04022021A403BA00F75F1C /* LocalNotificationManage.m in Sources */,
+				FCDE8AB721A69435006D556B /* Network.m in Sources */,
+				FC04022C21A4052000F75F1C /* SettingVC.m in Sources */,
+				FCDE8ABD21A6B407006D556B /* GroupManageVC.m in Sources */,
 				FC0401DA21A3F07800F75F1C /* main.m in Sources */,
+				FCDE8ABA21A6A610006D556B /* AddGroupVC.m in Sources */,
+				FC04021121A4018600F75F1C /* FPSLabel.m in Sources */,
 				FC0401CC21A3F07700F75F1C /* AppDelegate.m in Sources */,
+				FC04021721A4021500F75F1C /* UITabBar+Badge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,9 +798,12 @@
 			baseConfigurationReference = 49564C8D3773D8B500B2E078 /* Pods-ChatDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TK6W4XWH24;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ChatDemo/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = ChatDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,9 +819,12 @@
 			baseConfigurationReference = 599DE015B4D221B9E2CA8F33 /* Pods-ChatDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TK6W4XWH24;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ChatDemo/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = ChatDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
