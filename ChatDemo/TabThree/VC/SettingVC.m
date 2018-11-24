@@ -30,7 +30,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -43,20 +43,26 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"ThreeCellID"];
     }
     cell.selectionStyle = UITableViewCellSeparatorStyleNone;
-    cell.textLabel.text = @"退出登录";
+    if (indexPath.section==0) {
+        cell.textLabel.text = [NSString stringWithFormat:@"用户名：%@",[EMClientManage currentUsername]];
+    }else if (indexPath.section==1){
+        cell.textLabel.text = @"退出登录";
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [MBPManage showLoadingMessage:self.view message:nil];
-    [EMClientManage logoutSucceed:^(id data) {
-        [MBPManage hide:self.view];
-        [MBPManage showMessage:WIN message:@"退出登录成功"];
-        WIN.rootViewController = [[LoginVC alloc]init];
-    } failure:^(EMError *aError) {
-        [MBPManage hide:self.view];
-        [MBPManage showMessage:WIN message:@"退出登录失败，请重试"];
-    }];
+    if (indexPath.section==1) {
+        [MBPManage showLoadingMessage:self.view message:nil];
+        [EMClientManage logoutSucceed:^(id data) {
+            [MBPManage hide:self.view];
+            [MBPManage showMessage:WIN message:@"退出登录成功"];
+            WIN.rootViewController = [[LoginVC alloc]init];
+        } failure:^(EMError *aError) {
+            [MBPManage hide:self.view];
+            [MBPManage showMessage:WIN message:@"退出登录失败，请重试"];
+        }];
+    }
 }
 
 @end

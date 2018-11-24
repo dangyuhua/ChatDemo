@@ -160,5 +160,7 @@
 #define IsReadGroupPrivacy @"IsReadGroupPrivacy"//用于判断群聊@，长度为0为没有@，反之有@
 //通知
 #define ContactRefresh @"ContactRefresh"//通讯录刷新
+//通讯录刷新
+#define GroupMemberRefresh @"GroupMemberRefresh"
 
 #endif /* Macros_h */

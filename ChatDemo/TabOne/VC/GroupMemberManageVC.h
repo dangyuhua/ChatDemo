@@ -10,4 +10,8 @@
 
 @interface GroupMemberManageVC : BaseVC
 
+@property(nonatomic,strong)NSMutableArray *modelsArray;
+
+@property(nonatomic,copy)NSString *groupID;
+
 @end

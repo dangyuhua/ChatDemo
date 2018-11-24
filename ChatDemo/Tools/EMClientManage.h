@@ -52,6 +52,8 @@ typedef void(^errorBlock) (EMError *aError);
 +(void)creatGroupGroupName:(NSString *)groupName description:(NSString *)description ext:(NSString *)ext invitees:(NSMutableArray *)invitees message:(NSString *)message maxUsersCount:(int)maxUsersCount isInviteNeedConfirm:(BOOL)isInviteNeedConfirm style:(EMGroupStyle)style succeed:(successBlock)success failure:(errorBlock)failure;
 //邀请人进群
 +(void)inviteFriendJoinFGroup:(NSMutableArray *)aOccupants toGroup:(NSString *)aGroupId message:(NSString *)message succeed:(successBlock)success failure:(errorBlock)failure;
+//删除群组成员
++(void)delectMemberFromGroup:(NSMutableArray *)aOccupants toGroup:(NSString *)aGroupId succeed:(successBlock)success failure:(errorBlock)failure;
 //申请进群
 +(void)requestJoinFGroupToGroup:(NSString *)aGroupId message:(NSString *)message succeed:(successBlock)success failure:(errorBlock)failure;
 //获取所有群组从网络
@@ -59,7 +61,7 @@ typedef void(^errorBlock) (EMError *aError);
 //获取所有群组从内存
 +(NSArray*)getAllGroups;
 //解散群聊
-+(void)delectGroupWithGroupId:(NSString *)groupId failure:(errorBlock)failure;
++(void)delectGroupWithGroupId:(NSString *)groupId succeed:(successBlock)success failure:(errorBlock)failure;
 //获取未读消息数
 +(int)getUnreadMSGCount;
 //文字消息发送

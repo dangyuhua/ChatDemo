@@ -33,6 +33,10 @@
     [self.view addSubview:self.btn];
     self.btn.layer.cornerRadius = 5;
     
+    UIButton *delect = [QuickCreate UIButtonWithFrame:Frame(38, 250, ScreenW-76, 50) backgroundColor:blueColor title:@"删除好友" image:nil selectImage:nil font:17 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:0 target:self action:@selector(delectClick)];
+    [self.view addSubview:delect];
+    delect.layer.cornerRadius = 5;
+    
 }
 
 -(void)btnClick{
@@ -45,6 +49,21 @@
         [MBPManage hide:self.view];
         DLog(@"%@",aError.errorDescription);
     }];
+}
+
+-(void)delectClick{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"你确定要删除%@吗",self.hxid] message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [EMClientManage delectContactWithName:self.hxid succeed:^(id data) {
+            [MBPManage showMessage:WIN message:@"删除成功"];
+        } failure:^(EMError *aError) {
+            [MBPManage showMessage:WIN message:@"删除失败"];
+        }];
+    }];
+    [alert addAction:sure];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

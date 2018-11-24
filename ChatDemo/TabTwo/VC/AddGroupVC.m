@@ -50,8 +50,12 @@
             [MBPManage showMessage:WIN message:@"创建失败"];
         }];
     }else{
-        [MBPManage hide:self.view];
-        [MBPManage showMessage:WIN message:@"暂不支持"];
+        [EMClientManage requestJoinFGroupToGroup:self.textfield.text message:nil succeed:^(id data) {
+            [MBPManage hide:self.view];
+        } failure:^(EMError *aError) {
+            [MBPManage hide:self.view];
+            [MBPManage showMessage:WIN message:@"创建失败"];
+        }];
     }
 }
 

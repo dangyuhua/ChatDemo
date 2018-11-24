@@ -31,6 +31,7 @@
 		FC04022C21A4052000F75F1C /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04022B21A4052000F75F1C /* SettingVC.m */; };
 		FC04022F21A4053800F75F1C /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04022E21A4053800F75F1C /* LoginVC.m */; };
 		FC04023221A4590900F75F1C /* AddFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04023121A4590900F75F1C /* AddFriendVC.m */; };
+		FC18D38621A9920400562113 /* GroupMemberManageVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC18D38521A9920400562113 /* GroupMemberManageVCModel.m */; };
 		FCDE8AB721A69435006D556B /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDE8AB621A69435006D556B /* Network.m */; };
 		FCDE8ABA21A6A610006D556B /* AddGroupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDE8AB921A6A610006D556B /* AddGroupVC.m */; };
 		FCDE8ABD21A6B407006D556B /* GroupManageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDE8ABC21A6B407006D556B /* GroupManageVC.m */; };
@@ -109,6 +110,8 @@
 		FC04022E21A4053800F75F1C /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		FC04023021A4590900F75F1C /* AddFriendVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddFriendVC.h; sourceTree = "<group>"; };
 		FC04023121A4590900F75F1C /* AddFriendVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddFriendVC.m; sourceTree = "<group>"; };
+		FC18D38421A9920400562113 /* GroupMemberManageVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupMemberManageVCModel.h; sourceTree = "<group>"; };
+		FC18D38521A9920400562113 /* GroupMemberManageVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupMemberManageVCModel.m; sourceTree = "<group>"; };
 		FCDE8AB521A69435006D556B /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
 		FCDE8AB621A69435006D556B /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
 		FCDE8AB821A6A610006D556B /* AddGroupVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGroupVC.h; sourceTree = "<group>"; };
@@ -276,6 +279,7 @@
 		FC0401FF21A400D700F75F1C /* TabOne */ = {
 			isa = PBXGroup;
 			children = (
+				FC18D38321A991E100562113 /* M */,
 				FC04020321A4013900F75F1C /* VC */,
 			);
 			path = TabOne;
@@ -352,6 +356,15 @@
 				FC04021621A4021500F75F1C /* UITabBar+Badge.m */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FC18D38321A991E100562113 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				FC18D38421A9920400562113 /* GroupMemberManageVCModel.h */,
+				FC18D38521A9920400562113 /* GroupMemberManageVCModel.m */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -609,6 +622,7 @@
 				FCDE8AC321A6F1DF006D556B /* PersonInfo.m in Sources */,
 				FC04022621A4041E00F75F1C /* ChatVC.m in Sources */,
 				FC04021221A4018600F75F1C /* EMClientManage.m in Sources */,
+				FC18D38621A9920400562113 /* GroupMemberManageVCModel.m in Sources */,
 				FC04023221A4590900F75F1C /* AddFriendVC.m in Sources */,
 				FCDE8AC021A6EAB5006D556B /* GroupMemberManageVC.m in Sources */,
 				FC04022F21A4053800F75F1C /* LoginVC.m in Sources */,

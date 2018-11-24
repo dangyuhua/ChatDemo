@@ -9,6 +9,7 @@
 #import "GroupManageVC.h"
 #import "ChatVC.h"
 #import "GroupMemberManageVC.h"
+#import "ContactListVC.h"
 
 @interface GroupManageVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -24,16 +25,20 @@
     [super viewDidLoad];
     self.title = @"群组管理";
     self.models = [[NSMutableArray alloc]init];
+    [NotificationCenter addObserver:self selector:@selector(setupData) name:GroupMemberRefresh object:nil];
+    
     [self setupUI];
     [self setupData];
 }
 
 -(void)setupData{
+    [self.models removeAllObjects];
     [MBPManage showLoadingMessage:self.view message:nil];
     [EMClientManage getGroupDetailsWithAGroupID:self.groupID succeed:^(id data) {
         EMGroup *group = data;
         [self.models addObjectsFromArray:group.occupants];
         [self.tableview reloadData];
+        self.tableview.hidden = NO;
         [MBPManage hide:self.view];
     } failure:^(EMError *aError) {
         [MBPManage hide:self.view];
@@ -47,10 +52,11 @@
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     [self.tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:@"GroupManageVCCellID"];
+    self.tableview.hidden = YES;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -73,6 +79,8 @@
         }
     }else if (indexPath.section==1) {
         cell.textLabel.text = @"群员管理";
+    }else{
+        cell.textLabel.text = @"群组解散";
     }
     return cell;
 }
@@ -82,9 +90,19 @@
         ChatVC *vc = [[ChatVC alloc]initWithConversationChatter:self.models[indexPath.row] conversationType:EMConversationTypeChat];
         vc.title = self.models[indexPath.row];
         [self pushVC:vc];
-    }else{
+    }else if (indexPath.section==1){
         GroupMemberManageVC *vc = [[GroupMemberManageVC alloc]init];
+        vc.modelsArray = self.models;
+        vc.groupID = self.groupID;
         [self pushVC:vc];
+    }else{
+        [EMClientManage delectGroupWithGroupId:self.groupID succeed:^(id data) {
+            [MBPManage showMessage:WIN message:@"解散成功"];
+            [NotificationCenter postNotificationName:ContactRefresh object:nil];
+            [self popVC:[ContactListVC class]];
+        } failure:^(EMError *aError) {
+            [MBPManage showMessage:WIN message:aError.errorDescription];
+        }];
     }
 }
 

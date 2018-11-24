@@ -223,6 +223,16 @@
         }
     }];
 }
+//删除群组成员
++(void)delectMemberFromGroup:(NSMutableArray *)aOccupants toGroup:(NSString *)aGroupId succeed:(successBlock)success failure:(errorBlock)failure{
+    [[EMClient sharedClient].groupManager removeMembers:aOccupants fromGroup:aGroupId completion:^(EMGroup *aGroup, EMError *aError) {
+        if (!aError) {
+            success(aGroup);
+        }else{
+            failure(aError);
+        }
+    }];
+}
 //申请进群
 +(void)requestJoinFGroupToGroup:(NSString *)aGroupId message:(NSString *)message succeed:(successBlock)success failure:(errorBlock)failure{
     [[EMClient sharedClient].groupManager requestToJoinPublicGroup:aGroupId message:message completion:^(EMGroup *aGroup, EMError *aError) {
@@ -249,9 +259,11 @@
     return array;
 }
 //解散群聊
-+(void)delectGroupWithGroupId:(NSString *)groupId failure:(errorBlock)failure{
++(void)delectGroupWithGroupId:(NSString *)groupId succeed:(successBlock)success failure:(errorBlock)failure{
     [[EMClient sharedClient].groupManager destroyGroup:groupId finishCompletion:^(EMError *aError) {
-        if (aError) {
+        if (!aError) {
+            success(nil);
+        }else{
             failure(aError);
         }
     }];
