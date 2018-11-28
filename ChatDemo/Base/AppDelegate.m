@@ -126,7 +126,6 @@
     //获取userInfo
     NSDictionary *userInfo = notification.userInfo;
     DLog(@"%@",userInfo);
-    
 }
 
 @end
