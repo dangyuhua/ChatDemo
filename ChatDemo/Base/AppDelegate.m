@@ -20,6 +20,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //注册本地通知
+    [self setupLocalNotification:launchOptions];
     //****环信
     //初始化SDK
     [EMClientManage initSDK];
@@ -68,7 +70,7 @@
     DLog(@"进入前台");
 }
 
-//本地通知
+//iOS10以前本地通知点击处理
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
     DLog(@"%@",notification.userInfo);
     if([notification.userInfo[@"title"] isEqualToString:@"消息通知"]){
@@ -92,7 +94,7 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     
 }
-
+//本地通知注册
 -(void)setupLocalNotification:(NSDictionary *)launchOptions{
     if (@available(iOS 10.0, *)) {
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
@@ -107,13 +109,6 @@
         //8.0
         UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:setting];
-        
-        //当程序被杀死的情况下,如何接收到通知并执行事情--ios10.0之后废弃,需要用10.0之前版本测试
-        UILocalNotification *notification = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
-        if (notification) {
-            NSLog(@"localNo = %@",notification.userInfo);//NSLog不会再打印
-            [self jumpToControllerWithLocationNotification:notification];
-        }
     }
     
 }

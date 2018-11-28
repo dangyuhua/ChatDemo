@@ -11,8 +11,10 @@
 
 @interface LocalNotificationManage : NSObject<UNUserNotificationCenterDelegate>
 
+//iOS 10以后版本添加本地通知
 - (void)addlocalNotificationWithTitle:(NSString *)title describe:(NSString *)describe userInfo:(NSDictionary *)userInfo;
 
-- (void)addLocalNotificationForOldVersionWithTitle:(NSString *)title describe:(NSString *)describe;
+//iOS 10以前版本添加本地通知
+- (void)addLocalNotificationForOldVersionWithTitle:(NSString *)title describe:(NSString *)describe userInfo:(NSDictionary *)userInfo;
 
 @end
