@@ -17,6 +17,8 @@
 
 @property(nonatomic,strong)UITableView *tableview;
 
+@property(nonatomic,copy)NSString *ower;
+
 @end
 
 @implementation GroupManageVC
@@ -36,6 +38,7 @@
     [MBPManage showLoadingMessage:self.view message:nil];
     [EMClientManage getGroupDetailsWithAGroupID:self.groupID succeed:^(id data) {
         EMGroup *group = data;
+        self.ower = group.owner;
         [self.models addObjectsFromArray:group.occupants];
         [self.tableview reloadData];
         self.tableview.hidden = NO;
@@ -80,7 +83,11 @@
     }else if (indexPath.section==1) {
         cell.textLabel.text = @"群员管理";
     }else{
-        cell.textLabel.text = @"群组解散";
+        if ([[EMClientManage currentUsername]isEqualToString:self.ower]) {
+            cell.textLabel.text = @"群组解散";
+        }else{
+            cell.textLabel.text = @"退出群组";
+        }
     }
     return cell;
 }
@@ -96,13 +103,23 @@
         vc.groupID = self.groupID;
         [self pushVC:vc];
     }else{
-        [EMClientManage delectGroupWithGroupId:self.groupID succeed:^(id data) {
-            [MBPManage showMessage:WIN message:@"解散成功"];
-            [NotificationCenter postNotificationName:ContactRefresh object:nil];
-            [self popVC:[ContactListVC class]];
-        } failure:^(EMError *aError) {
-            [MBPManage showMessage:WIN message:aError.errorDescription];
-        }];
+        if ([[EMClientManage currentUsername]isEqualToString:self.ower]) {
+            [EMClientManage delectGroupWithGroupId:self.groupID succeed:^(id data) {
+                [MBPManage showMessage:WIN message:@"解散成功"];
+                [NotificationCenter postNotificationName:ContactRefresh object:nil];
+                [self popVC:[ContactListVC class]];
+            } failure:^(EMError *aError) {
+                [MBPManage showMessage:WIN message:aError.errorDescription];
+            }];
+        }else{
+            [EMClientManage quitGroupWithGroupID:self.groupID succeed:^(id data) {
+                [MBPManage showMessage:WIN message:@"退出成功"];
+                [NotificationCenter postNotificationName:ContactRefresh object:nil];
+                [self popVC:[ContactListVC class]];
+            } failure:^(EMError *aError) {
+                [MBPManage showMessage:WIN message:aError.errorDescription];
+            }];
+        }
     }
 }
 

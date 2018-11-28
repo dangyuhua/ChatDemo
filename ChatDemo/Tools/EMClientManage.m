@@ -213,6 +213,16 @@
         }
     }];
 }
+//退出群组
++(void)quitGroupWithGroupID:(NSString *)groupID succeed:(successBlock)success failure:(errorBlock)failure{
+    [[EMClient sharedClient].groupManager leaveGroup:groupID completion:^(EMError *aError) {
+        if (!aError) {
+            success(nil);
+        }else{
+            failure(aError);
+        }
+    }];
+}
 //邀请人进群
 +(void)inviteFriendJoinFGroup:(NSMutableArray *)aOccupants toGroup:(NSString *)aGroupId message:(NSString *)message succeed:(successBlock)success failure:(errorBlock)failure{
     [[EMClient sharedClient].groupManager addMembers:aOccupants toGroup:aGroupId message:message completion:^(EMGroup *aGroup, EMError *aError) {

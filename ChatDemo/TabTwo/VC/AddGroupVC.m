@@ -52,9 +52,12 @@
     }else{
         [EMClientManage requestJoinFGroupToGroup:self.textfield.text message:nil succeed:^(id data) {
             [MBPManage hide:self.view];
+            [MBPManage showMessage:WIN message:@"加入成功"];
+            [NotificationCenter postNotificationName:ContactRefresh object:nil];
+            [self pop];
         } failure:^(EMError *aError) {
             [MBPManage hide:self.view];
-            [MBPManage showMessage:WIN message:@"创建失败"];
+            [MBPManage showMessage:WIN message:@"加入失败"];
         }];
     }
 }

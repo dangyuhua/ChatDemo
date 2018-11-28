@@ -10,6 +10,7 @@
 #import "TabBarVC.h"
 #import "LoginVC.h"
 #import <Bugly/Bugly.h>
+#import "ChatVC.h"
 
 @interface AppDelegate ()<EMClientDelegate>
 
@@ -67,20 +68,65 @@
     DLog(@"进入前台");
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+//本地通知
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    DLog(@"%@",notification.userInfo);
+    if([notification.userInfo[@"title"] isEqualToString:@"消息通知"]){
+        if (![[QuickCreate getCurrentVC]isKindOfClass:[ChatVC class]]) {
+            UINavigationController *nav = [QuickCreate getCurrentNav];
+            EMConversationType type;
+            if ([notification.userInfo[@"type"]isEqualToString:@"Chat"]){
+                type = EMConversationTypeChat;
+            }else {
+                type = EMConversationTypeGroupChat;
+            }
+            ChatVC *vc = [[ChatVC alloc]initWithConversationChatter:notification.userInfo[@"hxid"] conversationType:type];
+            vc.title = notification.userInfo[@"hxid"];
+            vc.hidesBottomBarWhenPushed = YES;
+            [nav pushViewController:vc animated:YES];
+        }
+    }
+    DLog(@"收到本地通知");
+}
+//远端推送通知
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    
 }
 
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+-(void)setupLocalNotification:(NSDictionary *)launchOptions{
+    if (@available(iOS 10.0, *)) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            if (granted) {
+                //获取用户是否同意开启通知
+                DLog(@"request authorization successed!");
+            }
+        }];
+    } else {
+        // Fallback on earlier versions
+        //8.0
+        UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:setting];
+        
+        //当程序被杀死的情况下,如何接收到通知并执行事情--ios10.0之后废弃,需要用10.0之前版本测试
+        UILocalNotification *notification = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
+        if (notification) {
+            NSLog(@"localNo = %@",notification.userInfo);//NSLog不会再打印
+            [self jumpToControllerWithLocationNotification:notification];
+        }
+    }
+    
 }
 
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+- (void)jumpToControllerWithLocationNotification:(UILocalNotification *)notification{
+    //如果APP在前台,就不用走通知的方法了
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+        return;
+    }
+    //获取userInfo
+    NSDictionary *userInfo = notification.userInfo;
+    DLog(@"%@",userInfo);
+    
 }
-
 
 @end

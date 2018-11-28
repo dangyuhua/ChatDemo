@@ -50,6 +50,8 @@ typedef void(^errorBlock) (EMError *aError);
 +(void)initEaseUIWithApplication:(UIApplication *)application options:(NSDictionary *)launchOptions;
 //创建群组
 +(void)creatGroupGroupName:(NSString *)groupName description:(NSString *)description ext:(NSString *)ext invitees:(NSMutableArray *)invitees message:(NSString *)message maxUsersCount:(int)maxUsersCount isInviteNeedConfirm:(BOOL)isInviteNeedConfirm style:(EMGroupStyle)style succeed:(successBlock)success failure:(errorBlock)failure;
+//退出群组
++(void)quitGroupWithGroupID:(NSString *)groupID succeed:(successBlock)success failure:(errorBlock)failure;
 //邀请人进群
 +(void)inviteFriendJoinFGroup:(NSMutableArray *)aOccupants toGroup:(NSString *)aGroupId message:(NSString *)message succeed:(successBlock)success failure:(errorBlock)failure;
 //删除群组成员
