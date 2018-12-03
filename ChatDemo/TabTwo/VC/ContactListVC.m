@@ -48,22 +48,34 @@
             self.friendsList = data;
             [EMClientManage getAllGroupsFromServeSucceed:^(id data) {
                 self.groupsList = data;
-                [self.tableview reloadData];
-                self.tableview.hidden = NO;
-                [MBPManage hide:self.view];
+                GCD_MAIN_QUEUE_ASYNC(^{
+                    [self.tableview reloadData];
+                    [self.tableview.mj_header endRefreshing];
+                    self.tableview.hidden = NO;
+                    [MBPManage hide:self.view];
+                });
             } failure:^(EMError *aError) {
-                [MBPManage hide:self.view];
-                [MBPManage showMessage:self.view message:@"获取通讯录失败"];
+                GCD_MAIN_QUEUE_ASYNC(^{
+                    [self.tableview.mj_header endRefreshing];
+                    [MBPManage hide:self.view];
+                    [MBPManage showMessage:self.view message:@"获取通讯录失败"];
+                });
             }];
         } failure:^(EMError *aError) {
-            [MBPManage hide:self.view];
-            [MBPManage showMessage:self.view message:@"获取通讯录失败"];
+            GCD_MAIN_QUEUE_ASYNC(^{
+                [self.tableview.mj_header endRefreshing];
+                [MBPManage hide:self.view];
+                [MBPManage showMessage:self.view message:@"获取通讯录失败"];
+            });
         }];
     });
 }
 
 -(void)setupUI{
-    self.tableview = [QuickCreate UITableViewWithBackgroundColor:RGB(239, 239, 239) frame:Frame(0, 0, ScreenW, ScreenH-kTopBarHeight-kTabBarHeight) separatorStyle:UITableViewCellSeparatorStyleSingleLine style:UITableViewStyleGrouped contentInset:Edge(0, 0, 30, 0)];
+    self.tableview = [QuickCreate UITableViewMJRefreshWithBackgroundColor:RGB(239, 239, 239) frame:Frame(0, 0, ScreenW, ScreenH-kTopBarHeight-kTabBarHeight) separatorStyle:UITableViewCellSeparatorStyleSingleLine style:UITableViewStyleGrouped contentInset:Edge(0, 0, 30, 0) footIsNeedDrag:NO mjheadBlock:^{
+        [self setupData];
+    } mjfootBlock:nil];
+    self.tableview.mj_footer = nil;
     [self.view addSubview:self.tableview];
     self.tableview.delegate = self;
     self.tableview.dataSource = self;

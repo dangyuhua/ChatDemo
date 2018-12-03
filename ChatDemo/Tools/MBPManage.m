@@ -30,7 +30,7 @@
     hud.removeFromSuperViewOnHide = YES;
     [hud hide:YES afterDelay:2.0];
 }
-//提示框
+//提示框（显示期间无法交互）
 +(void)showMessageOfNOInteraction:(UIView *)view message:(NSString *)message{
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.detailsLabelText = message;
@@ -42,6 +42,7 @@
     hud.removeFromSuperViewOnHide = YES;
     [hud hide:YES afterDelay:2.0];
 }
+//
 +(void)showMessage:(NSString *)message yOffset:(float)yOffset
 {
     UIView *view = [[UIApplication sharedApplication].delegate window];
