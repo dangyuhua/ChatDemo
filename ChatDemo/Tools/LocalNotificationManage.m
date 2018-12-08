@@ -7,6 +7,7 @@
 //
 
 #import "LocalNotificationManage.h"
+#import "ChatVC.h"
 
 @implementation LocalNotificationManage
 
@@ -89,6 +90,21 @@
     } else {
         // 判断为本地通知
         DLog(@"收到本地通知:%@", response.notification.request.content);
+        if([response.notification.request.content.userInfo[@"title"] isEqualToString:@"消息通知"]){
+            if (![[QuickCreate getCurrentVC]isKindOfClass:[ChatVC class]]) {
+                UINavigationController *nav = [QuickCreate getCurrentNav];
+                EMConversationType type;
+                if ([response.notification.request.content.userInfo[@"type"]isEqualToString:@"Chat"]){
+                    type = EMConversationTypeChat;
+                }else {
+                    type = EMConversationTypeGroupChat;
+                }
+                ChatVC *vc = [[ChatVC alloc]initWithConversationChatter:response.notification.request.content.userInfo[@"hxid"] conversationType:type];
+                vc.title = response.notification.request.content.userInfo[@"hxid"];
+                vc.hidesBottomBarWhenPushed = YES;
+                [nav pushViewController:vc animated:YES];
+            }
+        }
     }
     completionHandler(); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
 }
