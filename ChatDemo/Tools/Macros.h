@@ -21,12 +21,14 @@
 
 #define RefreshEMClient @"RefreshEMClient"
 
+
 //获取当前版本号
 #define BUNDLE_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 //获取当前版本的biuld
 #define BIULD_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 //获取当前设备的UDID
 #define DIV_UUID [[[UIDevice currentDevice] identifierForVendor] UUIDString]
+
 
 //GCD
 //GCD - 延迟执行
@@ -43,14 +45,13 @@
 #define ScreenH [UIScreen mainScreen].bounds.size.height
 /** 屏幕宽度 */
 #define ScreenW [UIScreen mainScreen].bounds.size.width
-//view宽度
-#define ViewW self.frame.size.width
-//view高度
-#define ViewH self.bounds.size.height
 //获取window
 #define WIN [UIApplication sharedApplication].delegate.window
-
+//获取通知中心
+#define NotificationCenter [NSNotificationCenter defaultCenter]
+//NSUserDefaults
 #define uDefaults [NSUserDefaults standardUserDefaults]
+
 
 //色值
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
@@ -61,31 +62,19 @@
 #define Size(w,h) CGSizeMake(w, h)
 //UIEdgeInsetsMake
 #define Edge(top,left,bottom,right)  UIEdgeInsetsMake(top, left, bottom, right)
-//一像素
-#define oneLine 1/[UIScreen mainScreen].scale
-//获取通知中心
-#define NotificationCenter [NSNotificationCenter defaultCenter]
+
 //一像素
 #define OnePixel 1/[UIScreen mainScreen].scale
 //状态栏高度
 #define kStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
-//灵活view高度
-#define ViewHeight ScreenH-kStatusBarHeight-kNaviBarHeight-kTabBarHeight
-
-//Nav高度
-#define kNaviBarHeight 44
+//Navigation高度
+#define kNaviBarHeight [UINavigationBar appearance].frame.size.height
 //导航栏高度
 #define kTopBarHeight (kStatusBarHeight+kNaviBarHeight)
-//标签栏高度
-#define kBottomBarHeight 49
 //iphoneX标签栏高度
-#define kiphoneXBottomBarHeight 83
-//iphone X导航栏高度
-#define kTopBarHeight_iPhoneX 88
+#define kIphoneXTabBarHeight 83
 //标签栏高度
 #define kTabBarHeight [[UITabBarController alloc]init].tabBar.frame.size.height
-//iPhone X标签栏高度
-#define kTabBarHeight_iPhoneX 83
 
 #define is_iPhoneXS_Max (ScreenW == 414.f && ScreenH == 896.f)
 #define is_iPhoneX (ScreenW == 375.f && ScreenH == 812.f)
@@ -115,45 +104,6 @@
 #define kAtYouMessage           1
 #define kAtAllMessage           2
 
-
-#define DCBGColor RGB(245,245,245)
-//一像素
-#define oneLine 1/[UIScreen mainScreen].scale
-//获取通知中心
-#define NotificationCenter [NSNotificationCenter defaultCenter]
-//一像素
-#define OnePixel 1/[UIScreen mainScreen].scale
-//状态栏高度
-#define kStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
-//灵活view高度
-#define ViewHeight ScreenH-kStatusBarHeight-kNaviBarHeight-kTabBarHeight
-
-//Nav高度
-#define kNaviBarHeight 44
-//导航栏高度
-#define kTopBarHeight (kStatusBarHeight+kNaviBarHeight)
-//标签栏高度
-#define kBottomBarHeight 49
-//iphoneX标签栏高度
-#define kiphoneXBottomBarHeight 83
-//iphone X导航栏高度
-#define kTopBarHeight_iPhoneX 88
-//标签栏高度
-#define kTabBarHeight [[UITabBarController alloc]init].tabBar.frame.size.height
-//iPhone X标签栏高度
-#define kTabBarHeight_iPhoneX 83
-
-#define is_iPhoneXS_Max (ScreenW == 414.f && ScreenH == 896.f)
-
-#define is_iPhoneX (ScreenW == 375.f && ScreenH == 812.f)
-
-#define is_iPhone8_Plus (ScreenW == 414.f && ScreenH == 736.f)
-
-#define is_iPhone8 (ScreenW == 375.f && ScreenH == 667.f)
-
-#define is_iPhone5 (ScreenW == 320 && ScreenH == 568.f)
-
-#define is_iPhone5_OR_LESS (ScreenW == 320 && ScreenH <= 568.f)
 
 //NSUserDefaults
 
