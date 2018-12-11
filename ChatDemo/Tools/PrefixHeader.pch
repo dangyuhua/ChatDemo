@@ -19,7 +19,7 @@
 #import <AFNetworking.h>
 #import "Network.h"
 #import "Macros.h"
-#import "QuickCreate.h"
+#import "QuickTools.h"
 #import "BaseVC.h"
 #import "MBPManage.h"
 #import "EMClientManage.h"

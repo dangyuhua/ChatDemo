@@ -23,16 +23,16 @@
 }
 
 -(void)setupUI{
-    self.textfield = [QuickCreate UITextFieldWithFrame:Frame(10, 50, ScreenW-20, 50) cornerRadius:5 font:18 borderStyle:UITextBorderStyleNone backgroundColor:whiteColor placeholder:@"请输入群名称" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18]} returnKeyType:UIReturnKeyDefault leftview:[QuickCreate UIViewWithFrame:Frame(0, 0, 5, 40) backgroundColor:clearColor] rightView:nil clearButtonMode:UITextFieldViewModeWhileEditing keyboardType:UIKeyboardTypeDefault];
+    self.textfield = [QuickTools UITextFieldWithFrame:Frame(10, 50, ScreenW-20, 50) cornerRadius:5 font:18 borderStyle:UITextBorderStyleNone backgroundColor:whiteColor placeholder:@"请输入群名称" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18]} returnKeyType:UIReturnKeyDefault leftview:[QuickTools UIViewWithFrame:Frame(0, 0, 5, 40) backgroundColor:clearColor] rightView:nil clearButtonMode:UITextFieldViewModeWhileEditing keyboardType:UIKeyboardTypeDefault];
     self.textfield.layer.borderColor = RGB(239, 239, 239).CGColor;
     self.textfield.layer.borderWidth = 1;
     [self.view addSubview:self.textfield];
     
-    UIButton *btn1 = [QuickCreate UIButtonWithFrame:Frame(30, 138, ScreenW-60, 50) backgroundColor:blueColor title:@"创建" image:nil selectImage:nil font:18 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:0 target:self action:@selector(btnClick:)];
+    UIButton *btn1 = [QuickTools UIButtonWithFrame:Frame(30, 138, ScreenW-60, 50) backgroundColor:blueColor title:@"创建" image:nil selectImage:nil font:18 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:0 target:self action:@selector(btnClick:)];
     [self.view addSubview:btn1];
     btn1.layer.cornerRadius = 5;
     
-    UIButton *btn2 = [QuickCreate UIButtonWithFrame:Frame(30, 218, ScreenW-60, 50) backgroundColor:blueColor title:@"加入" image:nil selectImage:nil font:18 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:1 target:self action:@selector(btnClick:)];
+    UIButton *btn2 = [QuickTools UIButtonWithFrame:Frame(30, 218, ScreenW-60, 50) backgroundColor:blueColor title:@"加入" image:nil selectImage:nil font:18 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:1 target:self action:@selector(btnClick:)];
     [self.view addSubview:btn2];
     btn2.layer.cornerRadius = 5;
 }

@@ -1,15 +1,15 @@
 //
-//  QuickCreate.m
+//  QuickTools.m
 //  Shopping
 //
 //  Created by 党玉华 on 2018/7/11.
 //  Copyright © 2018年 党玉华. All rights reserved.
 //
 
-#import "QuickCreate.h"
+#import "QuickTools.h"
 #import "FPSLabel.h"
 
-@interface QuickCreate()
+@interface QuickTools()
 
 @property (nonatomic, strong)NSTimer *timer;
 
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation QuickCreate
+@implementation QuickTools
 
 +(SDWebImageManager *)shareManager{
     static SDWebImageManager * manager = nil;

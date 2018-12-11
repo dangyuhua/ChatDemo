@@ -74,8 +74,8 @@
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
     DLog(@"%@",notification.userInfo);
     if([notification.userInfo[@"title"] isEqualToString:@"消息通知"]){
-        if (![[QuickCreate getCurrentVC]isKindOfClass:[ChatVC class]]) {
-            UINavigationController *nav = [QuickCreate getCurrentNav];
+        if (![[QuickTools getCurrentVC]isKindOfClass:[ChatVC class]]) {
+            UINavigationController *nav = [QuickTools getCurrentNav];
             EMConversationType type;
             if ([notification.userInfo[@"type"]isEqualToString:@"Chat"]){
                 type = EMConversationTypeChat;

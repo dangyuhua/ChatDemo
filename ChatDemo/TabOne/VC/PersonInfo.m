@@ -25,15 +25,15 @@
 }
 
 -(void)setupUI{
-    self.textfield = [QuickCreate UITextFieldWithFrame:Frame(30, 100, ScreenW-60, 40) cornerRadius:5 font:16 borderStyle:UITextBorderStyleNone backgroundColor:whiteColor placeholder:@"请输入透传消息" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} returnKeyType:UIReturnKeyGo leftview:[QuickCreate UIViewWithFrame:Frame(0, 0, 5, 40) backgroundColor:clearColor] rightView:nil clearButtonMode:UITextFieldViewModeWhileEditing keyboardType:UIKeyboardTypeDefault];
+    self.textfield = [QuickTools UITextFieldWithFrame:Frame(30, 100, ScreenW-60, 40) cornerRadius:5 font:16 borderStyle:UITextBorderStyleNone backgroundColor:whiteColor placeholder:@"请输入透传消息" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} returnKeyType:UIReturnKeyGo leftview:[QuickTools UIViewWithFrame:Frame(0, 0, 5, 40) backgroundColor:clearColor] rightView:nil clearButtonMode:UITextFieldViewModeWhileEditing keyboardType:UIKeyboardTypeDefault];
     [self.view addSubview:self.textfield];
     self.textfield.layer.borderColor = RGB(239, 239, 239).CGColor;
     self.textfield.layer.borderWidth = 1;
-    self.btn = [QuickCreate UIButtonWithFrame:Frame(38, 160, ScreenW-76, 50) backgroundColor:blueColor title:@"发送透传信息" image:nil selectImage:nil font:17 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:0 target:self action:@selector(btnClick)];
+    self.btn = [QuickTools UIButtonWithFrame:Frame(38, 160, ScreenW-76, 50) backgroundColor:blueColor title:@"发送透传信息" image:nil selectImage:nil font:17 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:0 target:self action:@selector(btnClick)];
     [self.view addSubview:self.btn];
     self.btn.layer.cornerRadius = 5;
     
-    UIButton *delect = [QuickCreate UIButtonWithFrame:Frame(38, 250, ScreenW-76, 50) backgroundColor:blueColor title:@"删除好友" image:nil selectImage:nil font:17 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:0 target:self action:@selector(delectClick)];
+    UIButton *delect = [QuickTools UIButtonWithFrame:Frame(38, 250, ScreenW-76, 50) backgroundColor:blueColor title:@"删除好友" image:nil selectImage:nil font:17 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:0 target:self action:@selector(delectClick)];
     [self.view addSubview:delect];
     delect.layer.cornerRadius = 5;
     

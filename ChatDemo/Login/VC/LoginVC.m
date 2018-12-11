@@ -30,17 +30,17 @@
 }
 
 -(void)setupUI{
-    self.idTf = [QuickCreate UITextFieldWithFrame:Frame(50, 100, ScreenW-100, 40) cornerRadius:5 font:15 borderStyle:UITextBorderStyleRoundedRect backgroundColor:clearColor placeholder:@"请输入账号" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} returnKeyType:UIReturnKeyDefault leftview:[QuickCreate UIViewWithFrame:Frame(0, 0, 10, 40) backgroundColor:clearColor] rightView:nil clearButtonMode:UITextFieldViewModeWhileEditing keyboardType:UIKeyboardTypePhonePad];
+    self.idTf = [QuickTools UITextFieldWithFrame:Frame(50, 100, ScreenW-100, 40) cornerRadius:5 font:15 borderStyle:UITextBorderStyleRoundedRect backgroundColor:clearColor placeholder:@"请输入账号" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} returnKeyType:UIReturnKeyDefault leftview:[QuickTools UIViewWithFrame:Frame(0, 0, 10, 40) backgroundColor:clearColor] rightView:nil clearButtonMode:UITextFieldViewModeWhileEditing keyboardType:UIKeyboardTypePhonePad];
     [self.view addSubview:self.idTf];
     
-    self.pwTf = [QuickCreate UITextFieldWithFrame:Frame(50, 180, ScreenW-100, 40) cornerRadius:5 font:15 borderStyle:UITextBorderStyleRoundedRect backgroundColor:clearColor placeholder:@"请输入账号" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} returnKeyType:UIReturnKeyGo leftview:[QuickCreate UIViewWithFrame:Frame(0, 0, 10, 40) backgroundColor:clearColor] rightView:nil clearButtonMode:UITextFieldViewModeWhileEditing keyboardType:UIKeyboardTypePhonePad];
+    self.pwTf = [QuickTools UITextFieldWithFrame:Frame(50, 180, ScreenW-100, 40) cornerRadius:5 font:15 borderStyle:UITextBorderStyleRoundedRect backgroundColor:clearColor placeholder:@"请输入账号" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} returnKeyType:UIReturnKeyGo leftview:[QuickTools UIViewWithFrame:Frame(0, 0, 10, 40) backgroundColor:clearColor] rightView:nil clearButtonMode:UITextFieldViewModeWhileEditing keyboardType:UIKeyboardTypePhonePad];
     [self.view addSubview:self.pwTf];
     
-    self.registerBtn = [QuickCreate UIButtonWithFrame:Frame(50, 350, ScreenW-100, 40) backgroundColor:blueColor title:@"注册" image:nil selectImage:nil font:18 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:0 target:self action:@selector(registerBtnClick)];
+    self.registerBtn = [QuickTools UIButtonWithFrame:Frame(50, 350, ScreenW-100, 40) backgroundColor:blueColor title:@"注册" image:nil selectImage:nil font:18 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:0 target:self action:@selector(registerBtnClick)];
     self.registerBtn.layer.cornerRadius = 5;
     [self.view addSubview:self.registerBtn];
     
-    self.loginBtn = [QuickCreate UIButtonWithFrame:Frame(50, 430, ScreenW-100, 40) backgroundColor:blueColor title:@"登录" image:nil selectImage:nil font:18 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:0 target:self action:@selector(loginBtnClick)];
+    self.loginBtn = [QuickTools UIButtonWithFrame:Frame(50, 430, ScreenW-100, 40) backgroundColor:blueColor title:@"登录" image:nil selectImage:nil font:18 textColor:whiteColor selectTextColor:whiteColor edgeInsets:UIEdgeInsetsZero tag:0 target:self action:@selector(loginBtnClick)];
     self.loginBtn.layer.cornerRadius = 5;
     [self.view addSubview:self.loginBtn];
 }

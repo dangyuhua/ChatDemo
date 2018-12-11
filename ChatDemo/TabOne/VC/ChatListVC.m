@@ -127,7 +127,7 @@
         }
     }
     if (conversationModel.conversation.ext[@"em_at_list"] != nil&&[conversationModel.conversation.ext[@"isread"]isEqualToString:@"1"]&&conversationModel.conversation.unreadMessagesCount!=0) {
-        attr = [QuickCreate NSMutableAttributedStringColorConfigText:[NSString stringWithFormat:@"[有人@我] %@",latestMessageTitle] textColor:redColor range:NSMakeRange(0, 6)];
+        attr = [QuickTools NSMutableAttributedStringColorConfigText:[NSString stringWithFormat:@"[有人@我] %@",latestMessageTitle] textColor:redColor range:NSMakeRange(0, 6)];
     }else{
         attr = [[NSMutableAttributedString alloc]initWithString:latestMessageTitle attributes:nil];
     }

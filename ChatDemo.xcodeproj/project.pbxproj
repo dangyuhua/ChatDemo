@@ -17,7 +17,7 @@
 		FC0401DA21A3F07800F75F1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0401D921A3F07800F75F1C /* main.m */; };
 		FC0401E421A3F07800F75F1C /* ChatDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0401E321A3F07800F75F1C /* ChatDemoTests.m */; };
 		FC0401EF21A3F07800F75F1C /* ChatDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0401EE21A3F07800F75F1C /* ChatDemoUITests.m */; };
-		FC04021021A4018600F75F1C /* QuickCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04020721A4018500F75F1C /* QuickCreate.m */; };
+		FC04021021A4018600F75F1C /* QuickTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04020721A4018500F75F1C /* QuickTools.m */; };
 		FC04021121A4018600F75F1C /* FPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04020A21A4018500F75F1C /* FPSLabel.m */; };
 		FC04021221A4018600F75F1C /* EMClientManage.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04020E21A4018600F75F1C /* EMClientManage.m */; };
 		FC04021321A4018600F75F1C /* MBPManage.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04020F21A4018600F75F1C /* MBPManage.m */; };
@@ -81,11 +81,11 @@
 		FC0401EE21A3F07800F75F1C /* ChatDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatDemoUITests.m; sourceTree = "<group>"; };
 		FC0401F021A3F07800F75F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC04020621A4018500F75F1C /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
-		FC04020721A4018500F75F1C /* QuickCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickCreate.m; sourceTree = "<group>"; };
+		FC04020721A4018500F75F1C /* QuickTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickTools.m; sourceTree = "<group>"; };
 		FC04020821A4018500F75F1C /* MBPManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPManage.h; sourceTree = "<group>"; };
 		FC04020921A4018500F75F1C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FC04020A21A4018500F75F1C /* FPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPSLabel.m; sourceTree = "<group>"; };
-		FC04020B21A4018600F75F1C /* QuickCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickCreate.h; sourceTree = "<group>"; };
+		FC04020B21A4018600F75F1C /* QuickTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickTools.h; sourceTree = "<group>"; };
 		FC04020C21A4018600F75F1C /* EMClientManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMClientManage.h; sourceTree = "<group>"; };
 		FC04020D21A4018600F75F1C /* FPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPSLabel.h; sourceTree = "<group>"; };
 		FC04020E21A4018600F75F1C /* EMClientManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMClientManage.m; sourceTree = "<group>"; };
@@ -251,8 +251,8 @@
 			children = (
 				FC04020921A4018500F75F1C /* PrefixHeader.pch */,
 				FC04020621A4018500F75F1C /* Macros.h */,
-				FC04020B21A4018600F75F1C /* QuickCreate.h */,
-				FC04020721A4018500F75F1C /* QuickCreate.m */,
+				FC04020B21A4018600F75F1C /* QuickTools.h */,
+				FC04020721A4018500F75F1C /* QuickTools.m */,
 				FCDE8AB521A69435006D556B /* Network.h */,
 				FCDE8AB621A69435006D556B /* Network.m */,
 				FC04020C21A4018600F75F1C /* EMClientManage.h */,
@@ -626,7 +626,7 @@
 				FC04023221A4590900F75F1C /* AddFriendVC.m in Sources */,
 				FCDE8AC021A6EAB5006D556B /* GroupMemberManageVC.m in Sources */,
 				FC04022F21A4053800F75F1C /* LoginVC.m in Sources */,
-				FC04021021A4018600F75F1C /* QuickCreate.m in Sources */,
+				FC04021021A4018600F75F1C /* QuickTools.m in Sources */,
 				FC04022321A4040100F75F1C /* ChatListVC.m in Sources */,
 				FC04021C21A4030800F75F1C /* TabBarVC.m in Sources */,
 				FC04022921A404FA00F75F1C /* ContactListVC.m in Sources */,

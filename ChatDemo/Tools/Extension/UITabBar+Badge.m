@@ -32,8 +32,8 @@
     if (title != nil) {
         badgeView.frame = Frame(x, y, 17, 17);
         badgeView.layer.cornerRadius = badgeView.frame.size.width/2;
-        UILabel *label = [QuickCreate UILabelWithFrame:CGRectZero backgroundColor:clearColor textColor:whiteColor text:title numberOfLines:0 textAlignment:NSTextAlignmentCenter font:12];
-        CGFloat width = [QuickCreate calculatedStringWidth:title WithSize:Size(MAXFLOAT,17) font:12];
+        UILabel *label = [QuickTools UILabelWithFrame:CGRectZero backgroundColor:clearColor textColor:whiteColor text:title numberOfLines:0 textAlignment:NSTextAlignmentCenter font:12];
+        CGFloat width = [QuickTools calculatedStringWidth:title WithSize:Size(MAXFLOAT,17) font:12];
         if (width>badgeView.frame.size.width) {
             width += 10;
             badgeView.frame = Frame(x, y, width, 17);

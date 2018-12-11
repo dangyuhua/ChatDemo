@@ -151,7 +151,7 @@
                 default: {
                 };
             }
-            if (![[QuickCreate getCurrentVC]isKindOfClass:[ChatVC class]]) {
+            if (![[QuickTools getCurrentVC]isKindOfClass:[ChatVC class]]) {
                 NSString *str;
                 if(msg.chatType == EMChatTypeChat){
                     str = @"Chat";
@@ -165,7 +165,7 @@
     //刷新未读消息
     [EMClientManage showUnreadMSGCount];
     [NotificationCenter postNotificationName:RefreshEMClient object:nil];
-    [QuickCreate playVibrate];
+    [QuickTools playVibrate];
 }
 //透传消息接收
 - (void)cmdMessagesDidReceive:(NSArray *)aCmdMessages {

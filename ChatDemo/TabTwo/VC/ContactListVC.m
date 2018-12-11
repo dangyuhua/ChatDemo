@@ -72,7 +72,7 @@
 }
 
 -(void)setupUI{
-    self.tableview = [QuickCreate UITableViewMJRefreshWithBackgroundColor:RGB(239, 239, 239) frame:Frame(0, 0, ScreenW, ScreenH-kTopBarHeight-kTabBarHeight) separatorStyle:UITableViewCellSeparatorStyleSingleLine style:UITableViewStyleGrouped contentInset:Edge(0, 0, 30, 0) footIsNeedDrag:NO mjheadBlock:^{
+    self.tableview = [QuickTools UITableViewMJRefreshWithBackgroundColor:RGB(239, 239, 239) frame:Frame(0, 0, ScreenW, ScreenH-kTopBarHeight-kTabBarHeight) separatorStyle:UITableViewCellSeparatorStyleSingleLine style:UITableViewStyleGrouped contentInset:Edge(0, 0, 30, 0) footIsNeedDrag:NO mjheadBlock:^{
         [self setupData];
     } mjfootBlock:nil];
     self.tableview.mj_footer = nil;
@@ -142,7 +142,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (section==1) {
-        self.friendLabel = [QuickCreate UILabelWithFrame:Frame(0, 0, ScreenW, 25) backgroundColor:clearColor textColor:RGB(207, 207, 207) text:@"  好友" numberOfLines:0 textAlignment:NSTextAlignmentLeft font:15];
+        self.friendLabel = [QuickTools UILabelWithFrame:Frame(0, 0, ScreenW, 25) backgroundColor:clearColor textColor:RGB(207, 207, 207) text:@"  好友" numberOfLines:0 textAlignment:NSTextAlignmentLeft font:15];
         if (self.friendsList.count!=0) {
             self.friendLabel.hidden = NO;
         }else{
@@ -150,7 +150,7 @@
         }
         return self.friendLabel;
     }else if (section==2){
-        self.groupLabel = [QuickCreate UILabelWithFrame:Frame(0, 0, ScreenW, 25) backgroundColor:clearColor textColor:RGB(207, 207, 207) text:@"  群组" numberOfLines:0 textAlignment:NSTextAlignmentLeft font:15];
+        self.groupLabel = [QuickTools UILabelWithFrame:Frame(0, 0, ScreenW, 25) backgroundColor:clearColor textColor:RGB(207, 207, 207) text:@"  群组" numberOfLines:0 textAlignment:NSTextAlignmentLeft font:15];
         if (self.groupsList.count!=0) {
             self.groupLabel.hidden = NO;
         }else{

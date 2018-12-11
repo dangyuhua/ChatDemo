@@ -1,5 +1,5 @@
 //
-//  QuickCreate.h
+//  QuickTools.h
 //  Shopping
 //
 //  Created by 党玉华 on 2018/7/11.
@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 
 
-@interface QuickCreate : NSObject
+@interface QuickTools : NSObject
 
 //UIButton
 +(UIButton *)UIButtonWithFrame:(CGRect )frame backgroundColor:(UIColor *)backgroundColor title:(NSString *)title image:(NSString *)image selectImage:(NSString *)selectImage font:(CGFloat)font textColor:(UIColor *)textColor selectTextColor:(UIColor *)selectTextColor edgeInsets:(UIEdgeInsets )edgeInsets tag:(NSInteger)tag target:(id)target action:(SEL)action;

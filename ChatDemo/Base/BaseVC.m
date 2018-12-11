@@ -53,7 +53,7 @@
 -(void)setupNavi{
     //配置返回按钮
     if (self.navigationController.viewControllers.firstObject != self) {
-        self.navigationItem.leftBarButtonItem = [QuickCreate UIBarButtonItemNavBackBarButtonItemWithTarget:self action:@selector(pop)];
+        self.navigationItem.leftBarButtonItem = [QuickTools UIBarButtonItemNavBackBarButtonItemWithTarget:self action:@selector(pop)];
     }
     
     //去除导航栏黑线

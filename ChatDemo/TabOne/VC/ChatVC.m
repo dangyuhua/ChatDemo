@@ -56,7 +56,7 @@
     self.showRefreshHeader = YES;
     self.delegate = self;
     self.dataSource = self;
-    self.navigationItem.leftBarButtonItem = [QuickCreate UIBarButtonItemNavBackBarButtonItemWithTarget:self action:@selector(pop)];
+    self.navigationItem.leftBarButtonItem = [QuickTools UIBarButtonItemNavBackBarButtonItemWithTarget:self action:@selector(pop)];
     self.tableView.backgroundColor = RGB(239, 239, 239);
     [self setupBottomTools];
     
@@ -72,7 +72,7 @@
                 }
             }];
         });
-        self.navigationItem.rightBarButtonItem =[QuickCreate UIBarButtonItemBarButtonWithTarget:self action:@selector(rightNavClick) frame:Frame(0, 0, 35, 18) title:@"群员" image:nil selectImage:nil font:17 textColor:whiteColor edgeInsets:UIEdgeInsetsZero];
+        self.navigationItem.rightBarButtonItem =[QuickTools UIBarButtonItemBarButtonWithTarget:self action:@selector(rightNavClick) frame:Frame(0, 0, 35, 18) title:@"群员" image:nil selectImage:nil font:17 textColor:whiteColor edgeInsets:UIEdgeInsetsZero];
     }
 }
 

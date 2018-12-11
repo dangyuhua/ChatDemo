@@ -54,7 +54,7 @@
 }
 
 -(void)setupUI{
-    self.tableview = [QuickCreate UITableViewWithBackgroundColor:RGB(239, 239, 239) frame:Frame(0, 0, ScreenW, ScreenH-kTopBarHeight) separatorStyle:UITableViewCellSeparatorStyleSingleLine style:UITableViewStyleGrouped contentInset:UIEdgeInsetsZero];
+    self.tableview = [QuickTools UITableViewWithBackgroundColor:RGB(239, 239, 239) frame:Frame(0, 0, ScreenW, ScreenH-kTopBarHeight) separatorStyle:UITableViewCellSeparatorStyleSingleLine style:UITableViewStyleGrouped contentInset:UIEdgeInsetsZero];
     [self.view addSubview:self.tableview];
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
