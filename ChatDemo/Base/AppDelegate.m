@@ -20,6 +20,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = whiteColor;
+    [self.window makeKeyAndVisible];
     //注册本地通知
     [self setupLocalNotification:launchOptions];
     //****环信
@@ -32,7 +35,9 @@
     //环信自动登录
     BOOL isLogin = [EMClientManage isAutoLogin];
     if (!isLogin)  {
-        self.window.rootViewController = [[LoginVC alloc]init];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginVC *vc = [sb instantiateViewControllerWithIdentifier:@"LoginVC"];
+        self.window.rootViewController = vc;
         return YES;
     }
     GCD_GLOBAL_QUEUE_ASYNC(^{
@@ -43,10 +48,9 @@
         config.blockMonitorTimeout = 10;
         [Bugly startWithAppId:BuglyKey config:config];
     });
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = whiteColor;
-    [self.window makeKeyAndVisible];
-    self.window.rootViewController = [[TabBarVC alloc]init];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TabBarVC *vc = [sb instantiateViewControllerWithIdentifier:@"TabBarVC"];
+    self.window.rootViewController = vc;
     return YES;
 }
 

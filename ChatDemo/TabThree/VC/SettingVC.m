@@ -57,7 +57,9 @@
         [EMClientManage logoutSucceed:^(id data) {
             [MBPManage hide:self.view];
             [MBPManage showMessage:WIN message:@"退出登录成功"];
-            WIN.rootViewController = [[LoginVC alloc]init];
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            LoginVC *vc = [sb instantiateViewControllerWithIdentifier:@"LoginVC"];
+            WIN.rootViewController = vc;
         } failure:^(EMError *aError) {
             [MBPManage hide:self.view];
             [MBPManage showMessage:WIN message:@"退出登录失败，请重试"];

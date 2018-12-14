@@ -27,9 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self setTabData];
-    [self setTabBar];
+    [self initTabbar];
+//    [self setTabData];
+//    [self setTabBar];
     self.mb = [[LocalNotificationManage alloc]init];
     
     //注册消息回调
@@ -38,6 +38,24 @@
     [[EMClient sharedClient].contactManager addDelegate:self delegateQueue:nil];
     //注册群组回调
     [[EMClient sharedClient].groupManager addDelegate:self delegateQueue:nil];
+}
+
+-(void)initTabbar{
+    [self tabBarItem:self.tabBar.items[0] vctitle:@"消息" image:@"homeNormal" selectImage:@"homeHight"];
+    [self tabBarItem:self.tabBar.items[1] vctitle:@"通讯录" image:@"categoryNormal" selectImage:@"categoryHight"];
+    [self tabBarItem:self.tabBar.items[2] vctitle:@"设置" image:@"discoverNormal" selectImage:@"discoverHight"];
+}
+
+-(void)tabBarItem:(UITabBarItem *)item vctitle:(NSString *)title image:(NSString *)image selectImage:(NSString *)selectImage{
+    UIImage *img = [UIImage imageNamed:image];
+    img = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *simg = [UIImage imageNamed:selectImage];
+    simg = [simg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item.image = img;
+    item.selectedImage = simg;
+    item.title = title;
+    [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(51, 51, 51),NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(254, 65, 1),NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
 }
 
 -(void)setTabData{

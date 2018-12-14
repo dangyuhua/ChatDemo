@@ -61,7 +61,9 @@
     //登录环信
     [EMClientManage loginEMClientSDKWithUsername:self.idTf.text password:self.pwTf.text succeed:^(id data) {
         [MBPManage hide:self.view];
-        WIN.rootViewController = [[TabBarVC alloc]init];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TabBarVC *vc = [sb instantiateViewControllerWithIdentifier:@"TabBarVC"];
+        WIN.rootViewController = vc;
     } failure:^(EMError *aError) {
         [MBPManage hide:self.view];
         [MBPManage showMessage:self.view message:[NSString stringWithFormat:@"%@",aError.errorDescription]];
