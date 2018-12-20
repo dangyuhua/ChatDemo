@@ -98,4 +98,9 @@
     [self dismissViewControllerAnimated:YES completion:block];
 }
 
+- (void)dealloc
+{
+    DLog(@"dealloc");
+}
+
 @end

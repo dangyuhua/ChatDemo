@@ -226,5 +226,9 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:whiteColor}];
 }
 
+- (void)dealloc
+{
+    DLog(@"dealloc");
+}
 
 @end

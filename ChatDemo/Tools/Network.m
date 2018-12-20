@@ -8,7 +8,7 @@
 
 #import "Network.h"
 
-BOOL haveNetwork;
+static Network *network = nil;
 
 @interface Network()
 
@@ -16,16 +16,24 @@ BOOL haveNetwork;
 
 @implementation Network
 
++(instancetype)shareNet{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        network = [[Network alloc]init];
+    });
+    return network;
+}
+
 //网络检测
 +(void)startMonitoringNetwork{
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     
     [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusNotReachable) {
-            haveNetwork = NO;
+            [[Network shareNet]setHaveNet:NO];
             [MBPManage showMessage:WIN message:@"没有网络"];
         }else{
-            haveNetwork = YES;
+            [[Network shareNet]setHaveNet:YES];
             [MBPManage showMessage:WIN message:@"网络已连接"];
         }
     }];

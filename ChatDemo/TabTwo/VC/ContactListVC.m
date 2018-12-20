@@ -31,7 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"通讯录";
-    
+    if ([Network shareNet].haveNet) {
+        DLog(@"dsda");
+    }
     self.friendsList = [[NSMutableArray alloc]init];
     self.groupsList = [[NSMutableArray alloc]init];
     [NotificationCenter addObserver:self selector:@selector(setupData) name:ContactRefresh object:nil];
