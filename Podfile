@@ -20,7 +20,7 @@ target 'ChatDemo' do
 pod 'Hyphenate'
 pod 'EaseUI', :git => 'https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git', :tag => '3.4.2'
 pod 'YYKit'
-pod 'Bugly'
 pod 'AFNetworking', '~> 3.2.1'
+pod 'Bugtags', '~> 3.1.0'
 
 end

@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "TabBarVC.h"
 #import "LoginVC.h"
-#import <Bugly/Bugly.h>
+#import <Bugtags/Bugtags.h>
 #import "ChatVC.h"
 
 @interface AppDelegate ()<EMClientDelegate>
@@ -20,6 +20,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    BugtagsOptions *options = [[BugtagsOptions alloc] init];
+    options.trackingUserSteps = YES; // 具体可设置的属性请查看 Bugtags.h
+    options.trackingCrashes = YES;
+    options.trackingNetwork = YES;
+    NSString *appkey;
+#ifdef DEBUG
+    appkey = @"da1f1874589eb34e9bf79bfb7ddd9ff7";
+#else
+    appkey = @"0f36f6c3acd21cbc0fb8d185d796ff24";
+#endif
+    [Bugtags startWithAppKey:appkey invocationEvent:BTGInvocationEventBubble options:options];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = whiteColor;
     [self.window makeKeyAndVisible];
@@ -43,10 +54,6 @@
     GCD_GLOBAL_QUEUE_ASYNC(^{
         //网络检测
         [Network startMonitoringNetwork];
-        BuglyConfig *config = [[BuglyConfig alloc]init];
-        config.blockMonitorEnable = YES;
-        config.blockMonitorTimeout = 10;
-        [Bugly startWithAppId:BuglyKey config:config];
     });
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TabBarVC *vc = [sb instantiateViewControllerWithIdentifier:@"TabBarVC"];
