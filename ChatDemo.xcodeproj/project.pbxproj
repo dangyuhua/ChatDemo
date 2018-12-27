@@ -379,7 +379,7 @@
 				FC0401C421A3F07700F75F1C /* Frameworks */,
 				FC0401C521A3F07700F75F1C /* Resources */,
 				828CFF3EBAD881225B296799 /* [CP] Copy Pods Resources */,
-				E1D5F83F1C088D10A18ECE06 /* [CP] Embed Pods Frameworks */,
+				86F7452C49EDF85CF9F514A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -570,7 +570,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatDemo/Pods-ChatDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E1D5F83F1C088D10A18ECE06 /* [CP] Embed Pods Frameworks */ = {
+		86F7452C49EDF85CF9F514A3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

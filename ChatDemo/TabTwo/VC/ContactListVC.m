@@ -37,7 +37,7 @@
     self.friendsList = [[NSMutableArray alloc]init];
     self.groupsList = [[NSMutableArray alloc]init];
     [NotificationCenter addObserver:self selector:@selector(setupData) name:ContactRefresh object:nil];
-    DLog(@"%@",@[][0]);
+    
     [self setupUI];
     [self setupData];
     

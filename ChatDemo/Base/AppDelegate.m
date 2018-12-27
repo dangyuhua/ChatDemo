@@ -25,12 +25,15 @@
     options.trackingCrashes = YES;
     options.trackingNetwork = YES;
     NSString *appkey;
+    BTGInvocationEvent type;
 #ifdef DEBUG
     appkey = @"da1f1874589eb34e9bf79bfb7ddd9ff7";
+    type = BTGInvocationEventBubble;
 #else
     appkey = @"0f36f6c3acd21cbc0fb8d185d796ff24";
+    type = BTGInvocationEventNone;
 #endif
-    [Bugtags startWithAppKey:appkey invocationEvent:BTGInvocationEventBubble options:options];
+    [Bugtags startWithAppKey:appkey invocationEvent:type options:options];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = whiteColor;
     [self.window makeKeyAndVisible];
