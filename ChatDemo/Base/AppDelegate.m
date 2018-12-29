@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "TabBarVC.h"
 #import "LoginVC.h"
-#import <Bugtags/Bugtags.h>
+#import <Bugly/Bugly.h>
 #import "ChatVC.h"
 
 @interface AppDelegate ()<EMClientDelegate>
@@ -20,20 +20,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    BugtagsOptions *options = [[BugtagsOptions alloc] init];
-    options.trackingUserSteps = YES; // 具体可设置的属性请查看 Bugtags.h
-    options.trackingCrashes = YES;
-    options.trackingNetwork = YES;
-    NSString *appkey;
-    BTGInvocationEvent type;
-#ifdef DEBUG
-    appkey = @"da1f1874589eb34e9bf79bfb7ddd9ff7";
-    type = BTGInvocationEventBubble;
-#else
-    appkey = @"0f36f6c3acd21cbc0fb8d185d796ff24";
-    type = BTGInvocationEventNone;
-#endif
-    [Bugtags startWithAppKey:appkey invocationEvent:type options:options];
+    BuglyConfig * config = [[BuglyConfig alloc] init];
+    config.debugMode = YES;//Debug信息开关, 默认关闭
+    config.blockMonitorEnable = YES;//卡顿监控开关，默认关闭
+    config.blockMonitorTimeout = 7;//卡顿监控判断间隔，单位为秒
+    config.unexpectedTerminatingDetectionEnable = YES;//非正常退出事件记录开关，默认关闭
+    [Bugly startWithAppId:@"8770336503" config:config];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = whiteColor;
     [self.window makeKeyAndVisible];
