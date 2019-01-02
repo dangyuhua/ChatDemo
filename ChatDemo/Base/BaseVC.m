@@ -25,7 +25,7 @@
 //vc的网络请求数组
 - (NSMutableArray *)netsArray{
     if (!_netsArray) {
-        _netsArray = [NSMutableArray array];
+        _netsArray = [[NSMutableArray alloc]init];
     }
     return _netsArray;
 }
