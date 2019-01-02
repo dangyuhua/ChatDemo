@@ -10,6 +10,8 @@
 typedef void(^completionBlock)(void);
 
 @interface BaseVC : UIViewController
+//vc的网络请求数组
+@property(nonatomic,strong)NSMutableArray<NSURLSessionTask *> *netsArray;
 
 -(void)pushVC:(UIViewController *)vc;
 

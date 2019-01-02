@@ -16,6 +16,11 @@
 
 @implementation AddFriendVC
 
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    DLog(@"dd");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"好友添加";

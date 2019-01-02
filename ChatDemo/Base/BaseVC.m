@@ -13,6 +13,22 @@
 @end
 
 @implementation BaseVC
+//vc消失的时候销毁vc所有网络请求
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    for (NSURLSessionTask *task in self.netsArray) {
+        if (task.state == NSURLSessionTaskStateRunning) {
+            [task cancel];
+        }
+    }
+}
+//vc的网络请求数组
+- (NSMutableArray *)netsArray{
+    if (!_netsArray) {
+        _netsArray = [NSMutableArray array];
+    }
+    return _netsArray;
+}
 
 //设置视图滑动手势
 -(void)viewDidAppear:(BOOL)animated{
