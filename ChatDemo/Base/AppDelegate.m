@@ -26,6 +26,10 @@
     config.blockMonitorTimeout = 7;//卡顿监控判断间隔，单位为秒
     config.unexpectedTerminatingDetectionEnable = YES;//非正常退出事件记录开关，默认关闭
     [Bugly startWithAppId:@"8770336503" config:config];
+    GCD_GLOBAL_QUEUE_ASYNC(^{
+        //网络检测
+        [Network startMonitoringNetwork];
+    });
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = whiteColor;
     [self.window makeKeyAndVisible];
@@ -46,10 +50,6 @@
         self.window.rootViewController = vc;
         return YES;
     }
-    GCD_GLOBAL_QUEUE_ASYNC(^{
-        //网络检测
-        [Network startMonitoringNetwork];
-    });
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TabBarVC *vc = [sb instantiateViewControllerWithIdentifier:@"TabBarVC"];
     self.window.rootViewController = vc;
