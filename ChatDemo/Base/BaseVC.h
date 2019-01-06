@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetworkArray.h"
+
 typedef void(^completionBlock)(void);
 
 @interface BaseVC : UIViewController
 //vc的网络请求数组
-@property(nonatomic,strong)NSMutableArray<NSURLSessionTask *> *netsArray;
+@property(nonatomic,strong)NetworkArray *netsArray;
 
 -(void)pushVC:(UIViewController *)vc;
 

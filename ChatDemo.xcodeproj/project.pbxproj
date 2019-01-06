@@ -32,6 +32,7 @@
 		FC04022F21A4053800F75F1C /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04022E21A4053800F75F1C /* LoginVC.m */; };
 		FC04023221A4590900F75F1C /* AddFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC04023121A4590900F75F1C /* AddFriendVC.m */; };
 		FC18D38621A9920400562113 /* GroupMemberManageVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC18D38521A9920400562113 /* GroupMemberManageVCModel.m */; };
+		FC1D268921E219A4009627FA /* NetworkArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1D268821E219A4009627FA /* NetworkArray.m */; };
 		FCDE8AB721A69435006D556B /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDE8AB621A69435006D556B /* Network.m */; };
 		FCDE8ABA21A6A610006D556B /* AddGroupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDE8AB921A6A610006D556B /* AddGroupVC.m */; };
 		FCDE8ABD21A6B407006D556B /* GroupManageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDE8ABC21A6B407006D556B /* GroupManageVC.m */; };
@@ -112,6 +113,8 @@
 		FC04023121A4590900F75F1C /* AddFriendVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddFriendVC.m; sourceTree = "<group>"; };
 		FC18D38421A9920400562113 /* GroupMemberManageVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupMemberManageVCModel.h; sourceTree = "<group>"; };
 		FC18D38521A9920400562113 /* GroupMemberManageVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupMemberManageVCModel.m; sourceTree = "<group>"; };
+		FC1D268721E219A4009627FA /* NetworkArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkArray.h; sourceTree = "<group>"; };
+		FC1D268821E219A4009627FA /* NetworkArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkArray.m; sourceTree = "<group>"; };
 		FCDE8AB521A69435006D556B /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
 		FCDE8AB621A69435006D556B /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
 		FCDE8AB821A6A610006D556B /* AddGroupVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGroupVC.h; sourceTree = "<group>"; };
@@ -255,6 +258,8 @@
 				FC04020721A4018500F75F1C /* QuickTools.m */,
 				FCDE8AB521A69435006D556B /* Network.h */,
 				FCDE8AB621A69435006D556B /* Network.m */,
+				FC1D268721E219A4009627FA /* NetworkArray.h */,
+				FC1D268821E219A4009627FA /* NetworkArray.m */,
 				FC04020C21A4018600F75F1C /* EMClientManage.h */,
 				FC04020E21A4018600F75F1C /* EMClientManage.m */,
 				FC04020D21A4018600F75F1C /* FPSLabel.h */,
@@ -652,6 +657,7 @@
 				FC04021321A4018600F75F1C /* MBPManage.m in Sources */,
 				FC04022021A403BA00F75F1C /* LocalNotificationManage.m in Sources */,
 				FCDE8AB721A69435006D556B /* Network.m in Sources */,
+				FC1D268921E219A4009627FA /* NetworkArray.m in Sources */,
 				FC04022C21A4052000F75F1C /* SettingVC.m in Sources */,
 				FCDE8ABD21A6B407006D556B /* GroupManageVC.m in Sources */,
 				FC0401DA21A3F07800F75F1C /* main.m in Sources */,

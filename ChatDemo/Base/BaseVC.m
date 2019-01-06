@@ -16,16 +16,16 @@
 //vc消失的时候销毁vc所有网络请求
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    for (NSURLSessionTask *task in self.netsArray) {
+    for (NSURLSessionTask *task in self.netsArray.allObjects) {
         if (task.state == NSURLSessionTaskStateRunning) {
             [task cancel];
         }
     }
 }
 //vc的网络请求数组
-- (NSMutableArray *)netsArray{
+- (NetworkArray *)netsArray{
     if (!_netsArray) {
-        _netsArray = [[NSMutableArray alloc]init];
+        _netsArray = [[NetworkArray alloc]init];
     }
     return _netsArray;
 }
