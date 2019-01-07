@@ -289,12 +289,16 @@
     return textview;
 }
 
-+(UIImageView *)UIImageViewWithFrame:(CGRect )frame image:(NSString *)image{
++(UIImageView *)UIImageViewWithFrame:(CGRect )frame image:(id)image{
     UIImageView *imageView = [[UIImageView alloc]init];
     imageView.frame = frame;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.layer.masksToBounds = YES;
-    imageView.image = [UIImage imageNamed:image];
+    if ([image isKindOfClass:[NSString class]]) {
+        imageView.image = [UIImage imageNamed:image];
+    }else if ([image isKindOfClass:[UIImage class]]) {
+        imageView.image = image;
+    }
     return imageView;
 }
 
@@ -697,6 +701,26 @@
     CGContextStrokePath(line);
     // UIGraphicsGetImageFromCurrentImageContext()返回的就是image
     return UIGraphicsGetImageFromCurrentImageContext();
+}
+//获取启动图
++(UIImage *)getLaunchImage{
+    UIImage *lauchImage  = nil;
+    NSString *viewOrientation = nil;
+    CGSize viewSize = [UIScreen mainScreen].bounds.size;
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if(orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
+        viewOrientation = @"Landscape";
+    }else{
+        viewOrientation = @"Portrait";
+    }
+    NSArray *imagesDictionary = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    for (NSDictionary *dict in imagesDictionary) {
+        CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
+        if (CGSizeEqualToSize(imageSize, viewSize) && [viewOrientation isEqualToString:dict[@"UILaunchImageOrientation"]]) {
+            lauchImage = [UIImage imageNamed:dict[@"UILaunchImageName"]];
+        }
+    }
+    return lauchImage;
 }
 
 @end

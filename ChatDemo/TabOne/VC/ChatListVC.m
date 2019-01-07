@@ -8,7 +8,7 @@
 
 #import "ChatListVC.h"
 #import "ChatVC.h"
-
+#import "FakeLaunchView.h"
 
 @interface ChatListVC ()<EaseConversationListViewControllerDataSource,EaseConversationListViewControllerDelegate,UIGestureRecognizerDelegate>
 
@@ -36,7 +36,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //幌子启动图
+    FakeLaunchView *bgview = [[FakeLaunchView alloc]initWithFrame:Frame(0, 0, ScreenW, ScreenH)];
+    [WIN addSubview:bgview];
+    //3秒后必定关闭
+    GCD_AFTER(3.0, ^{
+        [bgview removeFromSuperview];
+    });
+    
     [self setupConfig];
     self.title = @"消息";
     //代理
